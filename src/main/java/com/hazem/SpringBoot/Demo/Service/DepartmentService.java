@@ -3,6 +3,7 @@ package com.hazem.SpringBoot.Demo.Service;
 import java.util.List;
 
 import com.hazem.SpringBoot.Demo.Entities.Department;
+import com.hazem.SpringBoot.Demo.Errors.DepartmentNotFoundException;
 
 public interface DepartmentService {
 
@@ -10,7 +11,7 @@ public interface DepartmentService {
 
 	public List<Department> fetchDepartmentList();
 
-	public Department fetchDepartmentById(Long departmentId);
+	public Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
 	public void deleteDepartmentById(Long departmentId);
 
