@@ -2,9 +2,12 @@ package com.hazem.SpringBoot.Demo.Controllers;
 
 import java.util.List;
 
+import jakarta.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,14 +20,12 @@ import com.hazem.SpringBoot.Demo.Entities.Department;
 import com.hazem.SpringBoot.Demo.Errors.DepartmentNotFoundException;
 import com.hazem.SpringBoot.Demo.Service.DepartmentService;
 
-import jakarta.validation.Valid;
-
 @RestController
 public class DepartmentController {
 
 	@Autowired
 	private DepartmentService departmentService;
-	
+
 	private final Logger logger = LoggerFactory.getLogger(DepartmentController.class);
 
 	@PostMapping("/departments")

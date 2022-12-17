@@ -1,0 +1,58 @@
+server:
+  port: 8088
+  
+spring:
+  profiles:
+    active: dev
+    
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://localhost:3307/springbootdb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Hazem's SpringBoot App => Developpement Environment
+
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://localhost:3307/springbootdb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Hazem's SpringBoot App => Testing Environment
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://localhost:3307/springbootdb
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Welcome to Hazem's SpringBoot App => Production Environment
+  
+
