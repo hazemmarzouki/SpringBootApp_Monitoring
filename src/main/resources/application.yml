@@ -21,6 +21,18 @@ spring:
     show-sql: true
 welcome:
   message: Welcome to Hazem's SpringBoot App => Developpement Environment
+  
+#enable all actuator endpoints 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure : 
+        include : "*"
+
+   
 
 ---
 spring:
